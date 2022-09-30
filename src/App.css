@@ -4,30 +4,40 @@
   width: 100vw;
   height: 100vh;
   text-align: center;
-  background: rgb(67, 200, 215);
-  background: linear-gradient(
-    45deg,
-    rgba(67, 200, 215, 1) 0%,
-    rgba(172, 199, 255, 1) 100%
-  );
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Title {
   font-family: "Patua One", cursive;
   font-size: 40px;
+  color: white;
   width: 100vw;
   margin: 0;
   text-align: left;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   padding-left: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  background: rgb(0, 158, 176);
+  background: rgb(1, 74, 255);
   background: linear-gradient(
-    45deg,
-    rgba(0, 158, 176, 1) 0%,
-    rgba(0, 51, 158, 1) 100%
+    90deg,
+    rgba(1, 74, 255, 1) 0%,
+    rgba(0, 56, 255, 1) 15%,
+    rgba(0, 212, 255, 1) 100%
   );
+}
+
+.taskList {
+  border: 1px solid #04111a;
+  border-radius: 20px;
+  width: 50vw;
+  height: 5vh;
+  margin-top: 2vh;
+  align-items: center;
+  text-justify: center;
 }
