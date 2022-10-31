@@ -1,12 +1,22 @@
-const TaskList = ({ list }) => {
+import { Input } from "@mantine/core";
+
+const TaskList = ({ list, onAddTask }) => {
   return (
-    <ul id="tasklist">
-      {list.map((task) => (
-        <li key={task.id} className="task">
-          {task.title}
-        </li>
-      ))}
-    </ul>
+    <div>
+      <Input
+        className="taskInput"
+        placeholder="New Task"
+        radius="md"
+        size="md"
+      />
+      <ul id="tasklist">
+        {list.map((task) => (
+          <li key={task.title} className="task">
+            {task.title}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

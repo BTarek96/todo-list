@@ -53,3 +53,8 @@
 #tasklist {
   list-style: none;
 }
+
+.taskInput {
+  margin-top: 20px;
+  width: 50vw;
+}
