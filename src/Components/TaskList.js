@@ -7,11 +7,12 @@ const TaskList = ({ list, onAddTask }) => {
         className="taskInput"
         placeholder="New Task"
         radius="md"
-        size="md"
+        size="lg"
       />
       <ul id="tasklist">
         {list.map((task) => (
           <li key={task.title} className="task">
+            <input type="checkbox" className="checkbox" />
             {task.title}
           </li>
         ))}

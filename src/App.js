@@ -3,7 +3,9 @@ import TaskList from "./Components/TaskList";
 import { useState } from "react";
 
 function App() {
-  const [list, setList] = useState([{ title: "numero uno" }]);
+  const [list, setList] = useState([
+    { title: "numero uno Beso is the best w kda ana bas bagarab" },
+  ]);
 
   const addTask = (newTask) => {
     setList((current) => [...current, newTask]);
