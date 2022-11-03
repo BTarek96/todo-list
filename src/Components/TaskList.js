@@ -1,5 +1,5 @@
 import { Input } from "@mantine/core";
-
+import CheckBox from "./CheckBox";
 const TaskList = ({ list, onAddTask }) => {
   return (
     <div>
@@ -12,7 +12,7 @@ const TaskList = ({ list, onAddTask }) => {
       <ul id="tasklist">
         {list.map((task) => (
           <li key={task.title} className="task">
-            <input type="checkbox" className="checkbox" />
+            <CheckBox />
             {task.title}
           </li>
         ))}
