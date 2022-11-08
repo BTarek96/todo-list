@@ -26,12 +26,17 @@ function App() {
     <div className="App">
       <h1 className="Title">Todo List</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={value}
-          onChange={handleChange}
-          className="taskInput"
-        />
+        <label>New Task</label>
+        <div className="inputField">
+          <div className="plus"></div>
+          <input
+            type="text"
+            value={value}
+            onChange={handleChange}
+            className="taskInput"
+            placeholder="Enter new task"
+          />
+        </div>
       </form>
       <TaskList list={list} onAddTask={addTask} />
     </div>
