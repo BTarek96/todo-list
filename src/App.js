@@ -4,35 +4,32 @@ import { useState } from "react";
 
 function App() {
   /* const [focused, setFocused] = useState(false); */
-  const [list, setList] = useState([{ title: "." }]);
-  const [value, setValue] = useState("");
+  const [list, setList] = useState([]);
+  const [input, setInput] = useState("");
 
-  const addTask = (newTask) => {
-    const nTask = { title: String(newTask) };
-    setList((current) => [...current, nTask]);
-    console.log(list);
+  const saveTask = (event) => {
+    setInput(event.target.value);
   };
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
+  const addTask = (event) => {
     event.preventDefault();
-    addTask(event.target.value);
+    const copiedList = [...list];
+    copiedList.push(input);
+    setList(copiedList);
+    setInput("");
   };
 
   return (
     <div className="App">
       <h1 className="Title">Todo List</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={addTask}>
         <label>New Task</label>
         <div className="inputField">
           <div className="plus"></div>
           <input
             type="text"
-            value={value}
-            onChange={handleChange}
+            value={input}
+            onChange={saveTask}
             className="taskInput"
             placeholder="Enter new task"
           />
