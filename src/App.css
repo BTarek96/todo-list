@@ -55,24 +55,24 @@
 }
 .inputField {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .taskInput {
-  margin-left: 2.5vw;
-  margin-top: 2vw;
+  margin-top: 2vh;
   width: 95vw;
   height: 8vh;
   color: black;
   border: none;
   box-shadow: 2px 2px 4px #c3c3c3, -2px -2px 4px #fdfdfd;
+  padding-left: 3%;
 }
 .taskInput:focus {
   outline: none;
 }
 
-.taskInput::placeholder {
-  padding-left: 3%;
-}
 .App form {
   position: relative;
   display: flex;
@@ -80,10 +80,11 @@
 }
 
 .plus {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  margin-top: 2vw;
+  position: relative;
+  width: 2vw;
+  height: 2vw;
+  top: 1vh;
+  left: 2.5vw;
 }
 
 .plus::before,
@@ -114,6 +115,20 @@
 form label {
   position: relative;
   width: fit-content;
-  top: 2vw;
-  left: 5vw;
+  top: 2vh;
+  left: 4vw;
+}
+
+.task button {
+  content: "";
+  border: 2px solid #252525;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.taskDone {
+  background-color: blue !important;
 }

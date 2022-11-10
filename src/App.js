@@ -1,5 +1,4 @@
 import "./App.css";
-import TaskList from "./Components/TaskList";
 import { useState } from "react";
 
 function App() {
@@ -19,6 +18,10 @@ function App() {
     setInput("");
   };
 
+  const handleClick = (event) => {
+    event.currentTarget.classList.toggle("taskDone");
+  };
+
   return (
     <div className="App">
       <h1 className="Title">Todo List</h1>
@@ -35,7 +38,14 @@ function App() {
           />
         </div>
       </form>
-      <TaskList list={list} onAddTask={addTask} />
+      <ul id="tasklist">
+        {list.map((task, i) => (
+          <li key={i} className="task">
+            <button onClick={handleClick}></button>
+            {task}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
