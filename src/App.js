@@ -19,6 +19,10 @@ function App() {
     setInput("");
   };
 
+  const taskDelete = (event) => {
+    setList(list.filter((task) => task !== event.target.value));
+  };
+
   return (
     <div className="App">
       <h1 className="Title">Todo List</h1>
@@ -37,7 +41,10 @@ function App() {
       </form>
       <ul id="tasklist">
         {list.map((task, i) => (
-          <Task taskTitle={task} id={i} />
+          <div className="taskContainer">
+            <Task taskTitle={task} id={i} />
+            <button className="deleteTask" onClick={taskDelete} value={task} />
+          </div>
         ))}
       </ul>
     </div>

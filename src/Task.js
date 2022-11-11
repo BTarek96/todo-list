@@ -10,7 +10,7 @@ const Task = ({ taskTitle, id }) => {
 
   return (
     <li key={id} className={isDone ? "task completed" : "task"}>
-      <button onClick={handleClick}></button>
+      <button className="taskFinish" onClick={handleClick}></button>
       {taskTitle}
     </li>
   );
