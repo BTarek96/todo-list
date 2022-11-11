@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState } from "react";
+import Task from "./Task";
 
 function App() {
   /* const [focused, setFocused] = useState(false); */
@@ -16,10 +17,6 @@ function App() {
     copiedList.push(input);
     setList(copiedList);
     setInput("");
-  };
-
-  const handleClick = (event) => {
-    event.currentTarget.classList.toggle("taskDone");
   };
 
   return (
@@ -40,10 +37,7 @@ function App() {
       </form>
       <ul id="tasklist">
         {list.map((task, i) => (
-          <li key={i} className="task">
-            <button onClick={handleClick}></button>
-            {task}
-          </li>
+          <Task taskTitle={task} id={i} />
         ))}
       </ul>
     </div>
